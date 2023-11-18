@@ -3,50 +3,50 @@ body {
 
 .rectangulogris {
   width: 210px; /* Ancho del rectángulo */
-  height: 170px; /* Altura del rectángulo */
+  height: 175px; /* Altura del rectángulo */
   background-color:#BCBCBC; /* Color de fondo gris */
   position: absolute; /* Posicionamiento absoluto */
-  top: 5%; /* Distancia desde la parte superior */
-  left: 6%; /* Distancia desde la izquierda */
+  top: 40px; /* Distancia desde la parte superior */
+  left: 80px; /* Distancia desde la izquierda */
   
 }
 .hombre {
-  width: 150px; /* Ancho del rectángulo */
-  height: 50px; /* Altura del rectángulo */
+  width: 170px; /* Ancho del rectángulo */
+  height: 60px; /* Altura del rectángulo */
   background-color: #CF01F7; /* Color de fondo fucsia */
   display: flex; /* Usar el modelo de caja flexible para centrar el texto */
   align-items: center; /* Centrar verticalmente el contenido */
   justify-content: center; /* Centrar horizontalmente el contenido */
   color: black; /* Color del texto negro */
   position: absolute; /* Posicionamiento absoluto */
-  top: 5%; /* Distancia desde la parte superior */
-  left: 20%; /* Distancia desde la izquierda */
+  top: 40px; /* Distancia desde la parte superior */
+  left: 360px; /* Distancia desde la izquierda */
   
 }
 .mujer {
-  width: 150px; /* Ancho del rectángulo */
-  height: 50px; /* Altura del rectángulo */
+  width: 170px; /* Ancho del rectángulo */
+  height: 60px; /* Altura del rectángulo */
   background-color: #CF01F7; /* Color de fondo fucsia */
   display: flex; /* Usar el modelo de caja flexible para centrar el texto */
   align-items: center; /* Centrar verticalmente el contenido */
   justify-content: center; /* Centrar horizontalmente el contenido */
   color: black; /* Color del texto negro */
   position: absolute; /* Posicionamiento absoluto */
-  top: 5%; /* Distancia desde la parte superior */
-  left: 30%; /* Distancia desde la izquierda */
+  top: 40px; /* Distancia desde la parte superior */
+  left: 585px; /* Distancia desde la izquierda */
   
 }
 .niños {
-  width: 150px; /* Ancho del rectángulo */
-  height: 50px; /* Altura del rectángulo */
+  width: 170px; /* Ancho del rectángulo */
+  height: 60px; /* Altura del rectángulo */
   background-color: #CF01F7; /* Color de fondo fucsia */
   display: flex; /* Usar el modelo de caja flexible para centrar el texto */
   align-items: center; /* Centrar verticalmente el contenido */
   justify-content: center; /* Centrar horizontalmente el contenido */
   color: black; /* Color del texto negro */
   position: absolute; /* Posicionamiento absoluto */
-  top: 5%; /* Distancia desde la parte superior */
-  left: 40%; /* Distancia desde la izquierda */
+  top: 40px; /* Distancia desde la parte superior */
+  left: 815px; /* Distancia desde la izquierda */
   
 }
 
@@ -57,11 +57,17 @@ body {
   display: flex; /* Usar el modelo de caja flexible para centrar el texto */
   align-items: center; /* Centrar verticalmente el contenido */
   justify-content: center; /* Centrar horizontalmente el contenido */
-  color: black; /* Color del texto negro */
+  color: rgb(255, 252, 252); /* Color del texto negro */
   position: absolute; /* Posicionamiento absoluto */
   top: 15%; /* Distancia desde la parte superior */
   left: 20%; /* Distancia desde la izquierda */
   
+  
+}
+
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
 }
 
 .lineafuxia {
@@ -73,181 +79,178 @@ body {
   justify-content: center; /* Centrar horizontalmente el contenido */
   color: black; /* Color del texto negro */
   position: absolute; /* Posicionamiento absoluto */
-  top: 85%; /* Distancia desde la parte superior */
-  left: 4%; /* Distancia desde la izquierda */
+  top: 1135px; /* Distancia desde la parte superior */
+  left: 80px; /* Distancia desde la izquierda */
   
 }
 
 .sale {
   width: 210px; /* Ancho del rectángulo */
-  height: 90px; /* Altura del rectángulo */
+  height: 95px; /* Altura del rectángulo */
   background-color: #CF01F7; /* Color de fondo fucsia */
   display: flex; /* Usar el modelo de caja flexible para centrar el texto */
   align-items: center; /* Centrar verticalmente el contenido */
   justify-content: center; /* Centrar horizontalmente el contenido */
   color: black; /* Color del texto negro */
   position: absolute; /* Posicionamiento absoluto */
-  top: 28%; /* Distancia desde la parte superior */
-  left: 3%; /* Distancia desde la izquierda */
+  top: 300px; /* Distancia desde la parte superior */
+  left: 40px; /* Distancia desde la izquierda */
   z-index: 100;
   
 }
 
 .cuadradoscentral1 img {
-width: 13%; /* Ancho del 100% del contenedor */
-height: auto; /* Altura automática para mantener la proporción original */
+width: 420px; /* Ancho del 100% del contenedor */
+height: 545px; /* Altura automática para mantener la proporción original */
 position: absolute; /* Cambiar la posición a relativa para ajustar las coordenadas */
-top: 31%; /* Mover la imagen hacia abajo en un 50% del contenedor */
-left: 5%; /* Mover la imagen hacia la derecha en un 50% del contenedor */
+top: 330px; /* Mover la imagen hacia abajo en un 50% del contenedor */
+left: 80px; /* Mover la imagen hacia la derecha en un 50% del contenedor */
 
 }
 
 
 .cuadradodescripcion1 {
-  width: 278px; /* Ancho del rectángulo */
-  height: 110px; /* Altura del rectángulo */
+  width: 420px; /* Ancho del rectángulo */
+  height: 165px; /* Altura del rectángulo */
   background-color:#BCBCBC; /* Color de fondo gris */
   position: absolute; /* Posicionamiento absoluto */
-  top: 71%; /* Distancia desde la parte superior */
-  left: 5%; /* Distancia desde la izquierda */
+  top: 880px; /* Distancia desde la parte superior */
+  left: 80px; /* Distancia desde la izquierda */
   
 }
 
 .cuadradoscentral2 img {
-width: 13%; /* Ancho del 100% del contenedor */
-height: auto; /* Altura automática para mantener la proporción original */  
+width: 420px; /* Ancho del 100% del contenedor */
+height: 545px; /* Altura automática para mantener la proporción original */  
 position: absolute; /* Cambiar la posición a relativa para ajustar las coordenadas */
-top: 31%; /* Mover la imagen hacia abajo en un 50% del contenedor */
-left: 35%; /* Mover la imagen hacia la derecha en un 50% del contenedor */
+top: 330px; /* Mover la imagen hacia abajo en un 50% del contenedor */
+left: 730px; /* Mover la imagen hacia la derecha en un 50% del contenedor */
 
 }
 
 .cuadradodescripcion2 {
-  width: 278px; /* Ancho del rectángulo */
-  height: 110px; /* Altura del rectángulo */
+  width: 420px; /* Ancho del rectángulo */
+  height: 165px; /* Altura del rectángulo */
   background-color:#BCBCBC; /* Color de fondo gris */
   position: absolute; /* Posicionamiento absoluto */
-  top: 71%; /* Distancia desde la parte superior */
-  left: 35%; /* Distancia desde la izquierda */
+  top: 880px; /* Distancia desde la parte superior */
+  left: 730px; /* Distancia desde la izquierda */
   
 }
 
 .cuadradoscentral3 img {
-width: 13%; /* Ancho del 100% del contenedor */
-height: auto; /* Altura automática para mantener la proporción original */
+width: 420px; /* Ancho del 100% del contenedor */
+height: 545px; /* Altura automática para mantener la proporción original */
 position: absolute; /* Cambiar la posición a relativa para ajustar las coordenadas */
-top: 31%; /* Mover la imagen hacia abajo en un 50% del contenedor */
-left: 65%; /* Mover la imagen hacia la derecha en un 50% del contenedor */
+top: 330px; /* Mover la imagen hacia abajo en un 50% del contenedor */
+left: 1375px; /* Mover la imagen hacia la derecha en un 50% del contenedor */
     
 }
 
 .cuadradodescripcion3 {
-width: 278px; /* Ancho del rectángulo */
-height: 110px; /* Altura del rectángulo */
+width: 420px; /* Ancho del rectángulo */
+height: 165px; /* Altura del rectángulo */
 background-color:#BCBCBC; /* Color de fondo gris */
 position: absolute; /* Posicionamiento absoluto */
-top: 71%; /* Distancia desde la parte superior */
-left: 65%; /* Distancia desde la izquierda */
+top: 880px; /* Distancia desde la parte superior */
+left: 1375px; /* Distancia desde la izquierda */
 
 }
 
 .contacto img {
-width: 4%; /* Ancho del 100% del contenedor */
-height: auto; /* Altura automática para mantener la proporción original */
+width: 55px; /* Ancho del 100% del contenedor */
+height: 65px; /* Altura automática para mantener la proporción original */
 position: absolute; /* Cambiar la posición a relativa para ajustar las coordenadas */
-top: 5%; /* Mover la imagen hacia abajo en un 50% del contenedor */
-left: 85%; /* Mover la imagen hacia la derecha en un 50% del contenedor */
+top: 40px; /* Mover la imagen hacia abajo en un 50% del contenedor */
+left: 1055px; /* Mover la imagen hacia la derecha en un 50% del contenedor */
 
 }
 
 .corazon  img{
-width: 4%; /* Ancho del 100% del contenedor */
+width: 55px; /* Ancho del 100% del contenedor */
 height: auto; /* Altura automática para mantener la proporción original */
 position: absolute; /* Cambiar la posición a relativa para ajustar las coordenadas */
-top: 5%; /* Mover la imagen hacia abajo en un 50% del contenedor */
-left: 60%; /* Mover la imagen hacia la derecha en un 50% del contenedor */
+top: 40px; /* Mover la imagen hacia abajo en un 50% del contenedor */
+left: 1155px; /* Mover la imagen hacia la derecha en un 50% del contenedor */
 
 }
 
 .bolsa img {
-width: 4%; /* Ancho del 100% del contenedor */
+width: 55px; /* Ancho del 100% del contenedor */
 height: auto; /* Altura automática para mantener la proporción original */
 position: absolute; /* Cambiar la posición a relativa para ajustar las coordenadas */
-top: 5%; /* Mover la imagen hacia abajo en un 50% del contenedor */
-left: 65%; /* Mover la imagen hacia la derecha en un 50% del contenedor */
+top: 40px; /* Mover la imagen hacia abajo en un 50% del contenedor */
+left: 1260px; /* Mover la imagen hacia la derecha en un 50% del contenedor */
 
 }
 
 .codigoqr img {
-width: 4%; /* Ancho del 100% del contenedor */
+width: 100px; /* Ancho del 100% del contenedor */
 height: auto; /* Altura automática para mantener la proporción original */
 position: absolute; /* Cambiar la posición a relativa para ajustar las coordenadas */
-top: 90%; /* Mover la imagen hacia abajo en un 50% del contenedor */
-left: 5%; /* Mover la imagen hacia la derecha en un 50% del contenedor */
+top: 1190px; /* Mover la imagen hacia abajo en un 50% del contenedor */
+left: 160px; /* Mover la imagen hacia la derecha en un 50% del contenedor */
 
 }
 
 .facebook img {
-width: 4%; /* Ancho del 100% del contenedor */
+width: 100px; /* Ancho del 100% del contenedor */
 height: auto; /* Altura automática para mantener la proporción original */
 position: absolute; /* Cambiar la posición a relativa para ajustar las coordenadas */
-top: 90%; /* Mover la imagen hacia abajo en un 50% del contenedor */
-left: 25%; /* Mover la imagen hacia la derecha en un 50% del contenedor */
+top: 1190px; /* Mover la imagen hacia abajo en un 50% del contenedor */
+left: 450px; /* Mover la imagen hacia la derecha en un 50% del contenedor */
   
 }
 
 .twitter img {
-width: 4%; /* Ancho del 100% del contenedor */
+width: 100px; /* Ancho del 100% del contenedor */
 height: auto; /* Altura automática para mantener la proporción original */
 position: absolute; /* Cambiar la posición a relativa para ajustar las coordenadas */
-top: 90%; /* Mover la imagen hacia abajo en un 50% del contenedor */
-left: 45%; /* Mover la imagen hacia la derecha en un 50% del contenedor */
+top: 1190px; /* Mover la imagen hacia abajo en un 50% del contenedor */
+left: 770px; /* Mover la imagen hacia la derecha en un 50% del contenedor */
   
 }
 
 
 .instagram img {
-width: 4%; /* Ancho del 100% del contenedor */
+width: 100px; /* Ancho del 100% del contenedor */
 height: auto; /* Altura automática para mantener la proporción original */
 position: absolute; /* Cambiar la posición a relativa para ajustar las coordenadas */
-top: 90%; /* Mover la imagen hacia abajo en un 50% del contenedor */
-left: 65%; /* Mover la imagen hacia la derecha en un 50% del contenedor */
+top: 1190px; /* Mover la imagen hacia abajo en un 50% del contenedor */
+left: 1250px; /* Mover la imagen hacia la derecha en un 50% del contenedor */
     
 }
   
 .sobre img {
-width: 4%; /* Ancho del 100% del contenedor */
+width: 100px; /* Ancho del 100% del contenedor */
 height: auto; /* Altura automática para mantener la proporción original */
 position: absolute; /* Cambiar la posición a relativa para ajustar las coordenadas */
-top: 90%; /* Mover la imagen hacia abajo en un 50% del contenedor */
-left: 85%; /* Mover la imagen hacia la derecha en un 50% del contenedor */
+top: 1190px; /* Mover la imagen hacia abajo en un 50% del contenedor */
+left: 1630px; /* Mover la imagen hacia la derecha en un 50% del contenedor */
       
 }    
 
-  /* Buscador */
-  .buscador {
-    width: 480px;
-    height: 60px;
-    padding: 1px;
-    border: none;
-    border-radius: 45px; /* Bordes curvos */
-    background-color: #656565; /* Color gris */
-    float: right;
-    position: absolute; /* Cambiar la posición a relativa para ajustar las coordenadas */
-    top: 65px; /* Mover la imagen hacia abajo en un 50% del contenedor */
-    left: 1345px;
-    padding-left: 70px;
+.buscador {
+width: 480px;
+height: 60px;
+padding: 1px;
+border: none;
+border-radius: 45px; /* Bordes curvos */
+background-color: #656565; /* Color gris */
+float: right;
+position: absolute; /* Cambiar la posición a relativa para ajustar las coordenadas */
+top: 35px; /* Mover la imagen hacia abajo en un 50% del contenedor */
+left: 1345px;
+padding-left: 70px;
     
 }
 
 .lupa img {
-  width: 30px; /* Ancho del 100% del contenedor */
-  height: 40px; /* Altura automática para mantener la proporción original */
-  position: absolute; /* Cambiar la posición a relativa para ajustar las coordenadas */
-  top: 78px; /* Mover la imagen hacia abajo en un 50% del contenedor */
-  left: 1365px; /* Mover la imagen hacia la derecha en un 50% del contenedor */
+width: 30px; /* Ancho del 100% del contenedor */
+height: 40px; /* Altura automática para mantener la proporción original */
+position: absolute; /* Cambiar la posición a relativa para ajustar las coordenadas */
+top: 46px; /* Mover la imagen hacia abajo en un 50% del contenedor */
+left: 1365px; /* Mover la imagen hacia la derecha en un 50% del contenedor */
       
 }
-
-
 
