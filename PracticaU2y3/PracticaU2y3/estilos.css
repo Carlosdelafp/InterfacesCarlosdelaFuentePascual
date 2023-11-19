@@ -53,7 +53,7 @@ body {
 .navbar {
   width: 1450px; /* Ancho del rectángulo */
   height: 50px; /* Altura del rectángulo */
-  background-color: #00FDA3; /* Color de fondo fucsia */
+  background-color: #00FFA6; /* Color de fondo fucsia */
   display: flex; /* Usar el modelo de caja flexible para centrar el texto */
   align-items: center; /* Centrar verticalmente el contenido */
   justify-content: center; /* Centrar horizontalmente el contenido */
@@ -112,7 +112,7 @@ left: 80px; /* Mover la imagen hacia la derecha en un 50% del contenedor */
 .cuadradodescripcion1 {
   width: 420px; /* Ancho del rectángulo */
   height: 165px; /* Altura del rectángulo */
-  background-color:#BCBCBC; /* Color de fondo gris */
+  background-color:#444444; /* Color de fondo gris */
   position: absolute; /* Posicionamiento absoluto */
   top: 880px; /* Distancia desde la parte superior */
   left: 80px; /* Distancia desde la izquierda */
@@ -131,7 +131,7 @@ left: 730px; /* Mover la imagen hacia la derecha en un 50% del contenedor */
 .cuadradodescripcion2 {
   width: 420px; /* Ancho del rectángulo */
   height: 165px; /* Altura del rectángulo */
-  background-color:#BCBCBC; /* Color de fondo gris */
+  background-color:#444444; /* Color de fondo gris */
   position: absolute; /* Posicionamiento absoluto */
   top: 880px; /* Distancia desde la parte superior */
   left: 730px; /* Distancia desde la izquierda */
@@ -150,7 +150,7 @@ left: 1375px; /* Mover la imagen hacia la derecha en un 50% del contenedor */
 .cuadradodescripcion3 {
 width: 420px; /* Ancho del rectángulo */
 height: 165px; /* Altura del rectángulo */
-background-color:#BCBCBC; /* Color de fondo gris */
+background-color:#444444; /* Color de fondo gris */
 position: absolute; /* Posicionamiento absoluto */
 top: 880px; /* Distancia desde la parte superior */
 left: 1375px; /* Distancia desde la izquierda */
@@ -254,3 +254,114 @@ left: 1365px; /* Mover la imagen hacia la derecha en un 50% del contenedor */
       
 }
 
+.product-name1 {
+font-style: italic;
+font-weight: bold;
+font-size: 32px;
+color: #45C198;
+position: absolute; 
+top: 860px; /* Mover la imagen hacia abajo en un 50% del contenedor */
+left: 90px;
+}
+.product-name2 {
+  font-style: italic;
+  font-weight: bold;
+  font-size: 32px;
+  color: #45C198;
+  position: absolute; 
+  top: 860px; /* Mover la imagen hacia abajo en un 50% del contenedor */
+  left: 740px;
+  }
+  .product-name3 {
+    font-style: italic;
+    font-weight: bold;
+    font-size: 32px;
+    color: #45C198;
+    position: absolute; 
+    top: 860px; /* Mover la imagen hacia abajo en un 50% del contenedor */
+    left: 1385px;
+    }
+
+
+.€€€1 {
+  
+  font-weight: bold;
+  font-size: 36px;
+  color: #000000;
+  position: absolute; 
+  top: 860px; /* Mover la imagen hacia abajo en un 50% del contenedor */
+  left: 420px;
+  } 
+  .€€€2 {
+    
+    font-weight: bold;
+    font-size: 36px;
+    color: #000000;
+    position: absolute; 
+    top: 860px; /* Mover la imagen hacia abajo en un 50% del contenedor */
+    left: 1065px;
+    }  
+  
+    .€€€3 {
+      
+      font-weight: bold;
+      font-size: 36px;
+      color: #000000;
+      position: absolute; 
+      top: 860px; /* Mover la imagen hacia abajo en un 50% del contenedor */
+      left: 1710px;
+      }  
+      
+.info1 {
+  
+  font-weight: bold;
+  font-size: 23px;
+  color: #727373;
+  position: absolute; 
+  top: 920px; /* Mover la imagen hacia abajo en un 50% del contenedor */
+  left: 90px;
+  } 
+  .info2 {
+    
+    font-weight: bold;
+    font-size: 23px;
+    color: #727373;
+    position: absolute; 
+    top: 920px; /* Mover la imagen hacia abajo en un 50% del contenedor */
+    left: 740px;
+    }  
+  
+    .info3 {
+      
+      font-weight: bold;
+      font-size: 23px;
+      color: #727373;
+      position: absolute; 
+      top: 920px; /* Mover la imagen hacia abajo en un 50% del contenedor */
+      left: 1385px;
+      }  
+      
+.corazon1  img{
+  width: 55px; /* Ancho del 100% del contenedor */
+  height: auto; /* Altura automática para mantener la proporción original */
+  position: absolute; /* Cambiar la posición a relativa para ajustar las coordenadas */
+  top: 975px; /* Mover la imagen hacia abajo en un 50% del contenedor */
+  left: 425px; /* Mover la imagen hacia la derecha en un 50% del contenedor */
+        
+ }
+.corazon2  img{
+  width: 55px; /* Ancho del 100% del contenedor */
+  height: auto; /* Altura automática para mantener la proporción original */
+  position: absolute; /* Cambiar la posición a relativa para ajustar las coordenadas */
+  top: 975px; /* Mover la imagen hacia abajo en un 50% del contenedor */
+  left: 1090px; /* Mover la imagen hacia la derecha en un 50% del contenedor */
+          
+}
+.corazon3  img{
+  width: 55px; /* Ancho del 100% del contenedor */
+  height: auto; /* Altura automática para mantener la proporción original */
+  position: absolute; /* Cambiar la posición a relativa para ajustar las coordenadas */
+  top: 975px; /* Mover la imagen hacia abajo en un 50% del contenedor */
+  left: 1730px; /* Mover la imagen hacia la derecha en un 50% del contenedor */
+            
+            }    
