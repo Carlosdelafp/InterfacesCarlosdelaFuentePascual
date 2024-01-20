@@ -1,34 +1,42 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Práctica Unidades 3 y 4</title>
     <link rel="stylesheet" href="estilos.css">
+    <title>PracticaU 3 y 4</title>
 </head>
-
 <body>
+    
 
-
-    <div class="rectangulogris">
-        <p> LOGO </p>
+    <div class="header">
+        <div class="category">
+            <div class="logo">
+                 <img src="imagenes/logo.png" alt="Logo de la tienda">
+            </div>
+        </div>
+        <div class="category">
+            <p>Hombre</p>
+            <p>Mujer</p>
+            <p>Niños</p>
+        </div>
+        <div class="category">
+            <img src="imagenes/contacto.png" alt="contacto"></img>
+            <img src="imagenes/corazon.png" alt="Corazón"></img>
+            <img src="imagenes/bolsa.png" alt="Bolsa"></img>
+        </div>
+        <div class="category">
+            <input type="text" class="buscador" placeholder="Buscar">   
+        </div>                
+        </div>
     </div>
 
-
-
-    <div class="cabecera">
-        <div class="hombre"><p> Hombre </p></div>
-        <div class="mujer"><p> Mujer </p></div>
-        <div class="niños"><p> Niños </p></div>
-        <div class="contacto"><img src="imagenes/contacto.png"></div>
-        <div class="corazon"><img src="imagenes/corazon.png"></div>
-        <div class="bolsa"><img src="imagenes/bolsa.png"></div>
-        <input type="text" class="buscador" placeholder="Buscar">
-        <div class="lupa"><img src="imagenes/lupa.png"></div>
+<section id="contienelogo">
+    <div class="logogrande">
+        <img src="imagenes/logo.png"></img>
     </div>
-
-
+</section>
+  
 
     <div class="navbar">
         <a href="#">Novedades</a>
@@ -38,433 +46,51 @@
         <a href="#">Outlet</a>
       </div>
 
-
-
-      <div class="sale"><p> SALE ! </p></div>
-      
-
-
-
     <div class="main">
-        <div class="cuadradoscentral1"><img src="imagenes/cuadradocentral.png"></div>
-        <div class="cuadradoscentral2"><img src="imagenes/cuadradocentral.png"></div>
-        <div class="cuadradoscentral3"><img src="imagenes/cuadradocentral.png"></div>
+        <div class="item">
+            <div class="producto">
+             <img src="imagenes/vestido1.jpg" alt="producto">
+             </div>
+                <div class="descripcion">
+                 <p>Vestido gris</p>
+                 <p>€€€</p>
+                 <p>Elegante y versátil, este vestido gris destaca con su corte favorecedor y su suave tejido, perfecto para cualquier ocasión.</p>
+                  <img src="imagenes/corazoninfo.png" alt="Corazón">
+              </div>
+          </div>
 
-        <div class="cuadradodescripcion1"></div>
-        <div class="cuadradodescripcion2"></div>
-        <div class="cuadradodescripcion3"></div>
-
-        <p class="product-name1">PRODUCT NAME</p>
-        <p class="product-name2">PRODUCT NAME</p>
-        <p class="product-name3">PRODUCT NAME</p>
-
-        <p class="€€€1">€€€</p>
-        <p class="€€€2">€€€</p>
-        <p class="€€€3">€€€</p>
-
-        <div class="info1">
-            <p> info info info info info info </p>
-            <p> info info info info info info </p>
+        <div class="item">
+            <div class="producto">
+            <img src="imagenes/vestido2.jpg" alt="producto2">
+            </div>
+            <div class="descripcion">
+                <p> Vestido rojo</p>
+                <p>€€€</p>
+                <p>Deslumbra en este vestido rojo vibrante, diseñado para destacar en eventos nocturnos con su color audaz y estilo seductor.</p>
+                <img src="imagenes/corazoninfo.png" alt="Corazón">
+            </div>
         </div>
 
-        <div class="info2">
-            <p> info info info info info info </p>
-            <p> info info info info info info </p>
-        </div>
-
-        <div class="info3">
-            <p> info info info info info info </p>
-            <p> info info info info info info </p>
-        </div>
-
-        <div class="corazon1"><img src="imagenes/corazoninfo.png"></div>
-        <div class="corazon2"><img src="imagenes/corazoninfo.png"></div>
-        <div class="corazon3"><img src="imagenes/corazoninfo.png"></div>
-    </div>
-
-    <div class="pie">
-        <div class="lineafuxia"></div>
-
-        <div class="codigoqr">
-            <img src="imagenes/codigoqr.png">
-        </div>
-
-        <div class="facebook">
-            <img src="imagenes/facebook.png">
-        </div>
-
-        <div class="twitter">
-            <img src="imagenes/twitter.png">
-        </div>
-
-        <div class="instagram">
-            <img src="imagenes/instagram.png">
-        </div>
-
-        <div class="sobre">
-            <img src="imagenes/sobre.png">
+        <div class="item">
+            <div class="producto">
+                <img src="imagenes/vestido3.jpg" alt="producto3">
+                </div>
+                <div class="descripcion">
+                <p> Vestido morado</p>
+                <p>€€€</p>
+                <p>Sumérgete en la sofisticación con este vestido morado de diseño encantador, ideal para ocasiones especiales que exigen distinción.</p>
+                <img src="imagenes/corazoninfo.png" alt="Corazón">
+            </div>
         </div>
     </div>
 
-  
-
+    <div class="footer">
+        <hr class="line">
+        <img src="imagenes/codigoqr.png" alt="Código QR">
+        <img src="imagenes/facebook.png" alt="Facebook">
+        <img src="imagenes/twitter.png" alt="Twitter">
+        <img src="imagenes/instagram.png" alt="Instagram">
+        <img src="imagenes/gmail.png" alt="Gmail">
+    </div>
 </body>
-
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

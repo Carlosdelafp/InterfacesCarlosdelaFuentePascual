@@ -4,144 +4,121 @@ body {
   padding: 0;
   font-family: Arial, sans-serif;
   background-color: rgb(0, 0, 0);
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+  box-sizing:border-box;
 }
 
-.header {
-  padding: 10px;
-  padding-top: 40px;
-  padding-left: 250px;
-  display: flex;
-  align-items: center;
-  box-sizing: border-box;
-  position: fixed;
-  z-index: 100;
-  width: 100vw;
-  top: 0;
-  left: 0;
-  background-color: #000000;
+#contienelogo {
+  width: 17vw;
+  height: 40vh; 
+  z-index: 3!important;
+  position: relative; /* Agregado para establecer un contexto de posicionamiento para .logogrande */
 }
 
-.category {
-  display: flex;
-  align-items: center;
-}
-
-.buscador-container {
-  display: flex;
-  align-items: center;
-  
-  
-}
-
-.buscador {
-  width: 420px;
-  height: 60px;
-  padding: 1px;
-  border: none;
-  border-radius: 45px;
-  background-color: #656565;
-  float: right;
-  position: relative;
-  left: 15px;
-  padding-left: 70px;
-  z-index: 100;
-  font-size: 21px;
-  
-}
-
-.lupa{
-  position:relative;
-  z-index: 101;
-  left: 18%;
-  background-image: url(lupa.png);
-  background-repeat: no-repeat;
-  width: 12%;
-  height: 50px;
-  background-size: contain;
-  
+.logogrande {
+  position: sticky;
+  z-index: 2;
+  top: 0; /* Especifica la posición de referencia */
+  margin: 0;
+  padding: 0;
  
 }
+.logogrande img {
+  max-width:100%;
+  max-height: max-content;
+  width: auto; /* Ajusta el ancho del logo al 100% del contenedor del logo */
+  height: auto; 
+  background-color: #000000;
+
+}
+
+
+.header {
+
+  padding: 1%;
+  top:0%;
+  display: flex;
+  gap:1%;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 1;
+  height: 10vh;
+  width: 97vw;
+  background-color: #000000;
+  overflow: visible;
+  padding-top: 3vh;
+  
+  
+}
+
+
+.buscador {
+width: 27vw;
+height: 6vh;
+border-radius: 45px;
+background-color: #656565;
+padding-left: 12%;
+font-size: 100%;
+border: 2px solid rgb(85, 84, 84);
+background-image: url(imagenes/lupa.png) ;
+background-repeat: no-repeat;
+background-position: 3%  12% ;
+background-size: contain;
+
+}
+
+.buscador::placeholder {
+  color: #929292;
+}
+
+
+
 
 
 .category {
-  width: 1470px;
-  padding: 0%;
-  margin: 0 auto;
+  height: auto;
+  width: 100%;
   display:flex;
-  justify-content: space-between;
+  gap:10%;
   align-items: center;
   position: relative; /* Añadido position:relative para utilizar left */
   
-
 }
+
 
 .category p {
-  margin: 0;
   cursor: pointer;
-  width: auto; /* Cambiado a 'auto' para que se ajuste al contenido */
-  margin: 0 15px;
-  box-sizing: border-box;
-  font-family: initial;
-  
-  
-}
-
-.category p:hover {
-  background-color: #a08787;
-  outline: 1px solid whitesmoke !important;
-}
-
-.category img:hover {
-  width: 3.75%;
-  cursor: pointer;
-}
-
-
-.category p:nth-child(1),
-.category p:nth-child(2),
-.category p:nth-child(3) {
+  width: 11vw; /* Cambiado a 'auto' para que se ajuste al contenido */
   background-color: #CF01F7;
-  width: 170px;
-  height: 60px;
+  height: 6vh;
+  margin:1%;
   font-weight: bold;
-  font-size: 35px;
-}
-
-.category p:nth-child(1) {
-  padding-top: 0px; /* Puedes ajustar el espaciado según tus preferencias */
-  font-size: 35px;
+  font-size: 200%;
+  
 
 }
 
-.category p:nth-child(2) {
-  padding-top: 12px; /* Puedes ajustar el espaciado según tus preferencias */
-  font-size: 35px;
+
+.category img{
+  cursor: pointer;
+  justify-content:flex-end;
+  padding-left:8% ;
+
 }
 
-.category p:nth-child(3) {
-  padding-top: 25px; /* Puedes ajustar el espaciado según tus preferencias */
-  font-size: 35px;
-}
+.category .logo {
+  width: 45%; /* Ajusta el ancho del contenedor del logo al 50% del contenedor principal */
+  max-width: 400px; /* Establece un ancho máximo para el contenedor del logo */
+  padding-left:25% ;
+  
  
- 
- 
+}
 
-.rectangulogris {
-  width: 11vw; /* Cambiado a porcentaje */
-  height: 18vh; /* Cambiado a porcentaje */
-  background-color: #BCBCBC;
-  position: absolute;
-  top: 4.17%; /* (40px / 1080px) * 100% */
-  left: 4.17%; /* (80px / 1920px) * 100% */
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  z-index: 101;
+.category .logo img {
+  width: 100%; /* Ajusta el ancho del logo al 100% del contenedor del logo */
+  height: auto; /* Permite que la altura se ajuste automáticamente para mantener la proporción original del logo */
+  cursor: initial;
+
 }
 
 
@@ -173,20 +150,19 @@ body {
 }
 
 .main {
- 
   position: relative;
   display: flex;
   padding: 20px;
-  top:15vw;
   align-items: center;
   justify-content: space-around;
   margin-bottom: 35vh;
   
 }
 
+.item {    /*producto + descripcion*/
+border: 2px solid hotpink;
 
-.item {
-  text-align: center;
+ 
   
 }
 
@@ -195,29 +171,10 @@ body {
   height: 66vh;
   position: relative;
   overflow:hidden; /* Asegura que la imagen no se salga del contenedor */
-  
+  border: 2px solid rgb(155, 24, 24);
 
   
 }
-
-.sale {
-  width: 9vw;
-  height: 6vh;
-  background-color: #CF01F7;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: black;
-  position: absolute;
-  top: -1vh;
-  left: 4vw;
-  z-index: 10;
-  font-weight: bold;
-  font-size: 250%;
-  font-style: italic;
-  font-family: "Bookman Old Style", Georgia, serif;
-}
-
 
 .producto img {
   width: 100%;
@@ -225,22 +182,23 @@ body {
   object-fit: cover;
 }
 .descripcion {
+  text-align: center;
   width: 21vw;
   height: 16vh;
-  position: relative;
   margin-top: 2vh;
-  background-color: #353232;
+  background-color: #4d4848;
+  border: 3px solid rgb(179, 187, 184);
   display: grid;
-  grid-template-rows: repeat(2, 1fr);
-  grid-template-columns: 2fr 1fr; /* Ajusta las proporciones según tus preferencias */
-  grid-gap: 5px; /* Ajusta el espacio entre las celdas según tus preferencias */
+  grid-template-columns: auto auto; /* Ajusta las proporciones según tus preferencias */
+  grid-gap: auto; /* Ajusta el espacio entre las celdas según tus preferencias */
 }
 
 .descripcion p {
   font-weight: bold;
   font-size: 180%;
   margin: 1px 0;
-  
+  border: 1px solid rgb(20, 180, 127);
+  padding: 5px; /* Ajusta el espaciado según tus preferencias */
 }
 
 .descripcion p:nth-child(1) {
@@ -249,9 +207,6 @@ body {
   color: #36ffbc;
   font-family:'Courier New', Courier, monospace;
   font-weight: bold;
-  margin-top: 8%;
-  
-  
 
 }
 
@@ -261,32 +216,24 @@ body {
   font-size: 240%;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #000000;
-  margin-top: 11%;
 }
 .descripcion p:nth-child(3) {
   font-weight: bold;
-  font-size: 90%;
+  font-size: 80%;
   color: #727373;
-  margin-bottom: 10%;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .descripcion img {
   
-  position: relative;
-  width: 50%;
-  height: 50%;
-  object-fit: cover;
-  right: -25%;
-  margin-top: 10%;
- 
+  padding: 5%; /* Ajusta el espaciado según tus preferencias */
 }
 
 
 
 .producto p {
   margin: 5px 0;
-
+  border:1px solid rgb(20, 180, 127) ;
 }
 
 .footer {
@@ -298,7 +245,7 @@ body {
   text-align: center;
   align-items: center;
   bottom: 0px; /* Añadir margen superior para separar del contenido */
- 
+   border:1px solid rgb(48, 231, 24) ;
 
 }
 
@@ -314,5 +261,5 @@ body {
   
   width: 5%; /* Reducir el tamaño de las imágenes según tus necesidades */
   margin: 0 7%; /* Reducir el espacio entre las imágenes */
- 
+  border:1px solid rgb(48, 231, 24) ;
 }
