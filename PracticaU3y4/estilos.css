@@ -7,29 +7,7 @@ body {
   box-sizing:border-box;
 }
 
-#contienelogo {
-  width: 17vw;
-  height: 40vh; 
-  z-index: 3!important;
-  position: relative; /* Agregado para establecer un contexto de posicionamiento para .logogrande */
-}
 
-.logogrande {
-  position: sticky;
-  z-index: 2;
-  top: 0; /* Especifica la posición de referencia */
-  margin: 0;
-  padding: 0;
- 
-}
-.logogrande img {
-  max-width:100%;
-  max-height: max-content;
-  width: auto; /* Ajusta el ancho del logo al 100% del contenedor del logo */
-  height: auto; 
-  background-color: #000000;
-
-}
 
 
 .header {
@@ -72,9 +50,6 @@ background-size: contain;
 }
 
 
-
-
-
 .category {
   height: auto;
   width: 100%;
@@ -84,6 +59,7 @@ background-size: contain;
   position: relative; /* Añadido position:relative para utilizar left */
   
 }
+
 
 
 .category p {
@@ -98,28 +74,66 @@ background-size: contain;
 
 }
 
-
-.category img{
+.category img:not(.logo img){
   cursor: pointer;
-  justify-content:flex-end;
   padding-left:8% ;
+  
+
+
 
 }
 
+
 .category .logo {
-  width: 45%; /* Ajusta el ancho del contenedor del logo al 50% del contenedor principal */
-  max-width: 400px; /* Establece un ancho máximo para el contenedor del logo */
-  padding-left:25% ;
-  
+  width: 100%; /* Ajusta el ancho del contenedor del logo al 50% del contenedor principal */
+  padding-top: 50%;
+ 
+ animation: encoger auto linear; /* Arregla la propiedad animation */
+ animation-timeline: scroll(root block);
  
 }
 
+
+
+
+
 .category .logo img {
-  width: 100%; /* Ajusta el ancho del logo al 100% del contenedor del logo */
-  height: auto; /* Permite que la altura se ajuste automáticamente para mantener la proporción original del logo */
-  cursor: initial;
+  width: 100%;
+  height: auto;
+  border: 1px solid hotpink; /* Añade un punto y coma al final de esta línea */
+
+
 
 }
+
+
+@keyframes encoger{
+  
+   
+  
+   to {
+    width: 40%;
+    transform: translateX(-5vw);
+    transform: translateY(-9vh);
+  
+  }
+}
+
+
+
+.category p:hover {
+  outline:1px solid wheat;
+  background-color: #d321f7;
+  box-shadow: 0 0 15px purple ;
+  
+}
+
+.category img:hover:not(.logo img) {
+  transform: scale(1.1);
+}
+
+
+
 
 
 .navbar {
@@ -149,19 +163,20 @@ background-size: contain;
   background-color: #007D5E;
 }
 
-.main {
+main {
   position: relative;
   display: flex;
   padding: 20px;
+  padding-top: 40vh;
   align-items: center;
   justify-content: space-around;
-  margin-bottom: 35vh;
+
   
 }
 
 .item {    /*producto + descripcion*/
-border: 2px solid hotpink;
 
+text-align: center;
  
   
 }
@@ -172,8 +187,10 @@ border: 2px solid hotpink;
   position: relative;
   overflow:hidden; /* Asegura que la imagen no se salga del contenedor */
   border: 2px solid rgb(155, 24, 24);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
-  
 }
 
 .producto img {
@@ -181,6 +198,25 @@ border: 2px solid hotpink;
   height: 100%;
   object-fit: cover;
 }
+
+.producto.producto1 {
+  background-image: url('imagenes/sudaderadetras.jpg');
+}
+
+.producto.producto2 {
+  background-image: url('imagenes/negradetras.jpg');
+}
+
+.producto.producto3 {
+  background-image: url('imagenes/verdedetras.jpg');
+}
+
+.producto img:hover{
+  opacity: 0;
+}
+
+
+
 .descripcion {
   text-align: center;
   width: 21vw;
@@ -191,6 +227,9 @@ border: 2px solid hotpink;
   display: grid;
   grid-template-columns: auto auto; /* Ajusta las proporciones según tus preferencias */
   grid-gap: auto; /* Ajusta el espacio entre las celdas según tus preferencias */
+  justify-content: center;
+  align-content: center;
+
 }
 
 .descripcion p {
@@ -207,6 +246,7 @@ border: 2px solid hotpink;
   color: #36ffbc;
   font-family:'Courier New', Courier, monospace;
   font-weight: bold;
+  font-size: 200%;
 
 }
 
@@ -216,6 +256,7 @@ border: 2px solid hotpink;
   font-size: 240%;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #000000;
+  
 }
 .descripcion p:nth-child(3) {
   font-weight: bold;
@@ -226,15 +267,10 @@ border: 2px solid hotpink;
 
 .descripcion img {
   
-  padding: 5%; /* Ajusta el espaciado según tus preferencias */
+  padding: 10%; /* Ajusta el espaciado según tus preferencias */
 }
 
 
-
-.producto p {
-  margin: 5px 0;
-  border:1px solid rgb(20, 180, 127) ;
-}
 
 .footer {
   
@@ -244,8 +280,6 @@ border: 2px solid hotpink;
   padding: 10px; /* Reducir la altura del padding */
   text-align: center;
   align-items: center;
-  bottom: 0px; /* Añadir margen superior para separar del contenido */
-   border:1px solid rgb(48, 231, 24) ;
 
 }
 
