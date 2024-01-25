@@ -1,3 +1,5 @@
+/************ MOVIL ****************/
+
 body {
   overflow: auto;
   margin: 0;
@@ -5,10 +7,11 @@ body {
   font-family: Arial, sans-serif;
   background-color: rgb(0, 0, 0);
   box-sizing: border-box;
+  background-image: url(imagenes/fondomovil.jpg);
+  background-repeat: no-repeat;
+  background-position: 35% 12%;
+  background-size: cover;
 }
-
-/************ MOVIL ****************/
-
 
   /*! HEADER */
   header {
@@ -18,13 +21,12 @@ body {
     height: 9vh;
     background-color: #000000;
     z-index: 1;
-    padding: 2px 0;
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    z-index: 5;
   }
 
- 
   .category {
     display: flex;
     align-items: center;
@@ -40,23 +42,31 @@ body {
   }
   .category img:not(.logo img) {
     width: auto;
-    height: 6vh; /* Unidad relativa */
+    height: 4.5vh; /* Unidad relativa */
   }
 
   .buscador {
-    width: 1vw;
-    height: 8vh;
-    background-color: #656565;
-    font-size: 4vw; /* Unidad relativa */
+    width: 11vw;
+    height: 6vh;
+    background-color: #faf7f7;
+    font-size: 100%; /* Unidad relativa */
     border: 2px solid rgb(85, 84, 84);
     background-image: url(imagenes/lupa.png);
     background-repeat: no-repeat;
     background-position: 35% 12%;
     background-size: contain;
-    border: 1px solid turquoise
-   
+    margin-left:-25%;
+    padding-left: 20%;
   }
+  .buscador::placeholder {
+    color: transparent;
+}
 
+  .buscador:focus {
+    background-image: none;
+    width: 14vw;
+    height: 4vh;
+  }
 
   /*! NAVBAR */
   .navbar {
@@ -86,22 +96,47 @@ body {
   }
 
   /*! MAIN */
+
   main {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
     margin-top: 5vh; /* Unidad relativa */
+    position: relative;
+ 
   }
 
   .item {
     width: 80vw;
     margin: 1vw; /* Unidad relativa */
     padding: 1vw; /* Unidad relativa */
-    background-color: #fff;
-    border-radius: 0.8vw; /* Unidad relativa */
-    box-shadow: 0 0 1vw rgba(0, 0, 0, 0.1); /* Unidad relativa */
+    background-color: #ffffff;
+    border-radius: 2vw; /* Unidad relativa */
+
   }
+  .sale {
+    display: inline-flex;
+    position: absolute;
+    top: -1vh;
+    left: 2vw;
+    background-color: #ff00ff;
+    width: 25vw; /* Ancho ajustable según tu diseño */
+    height: 5vh; /* Altura ajustable según tu diseño */
+    z-index: 1; 
+    align-items: center;
+    justify-content: center;
+    border-radius: 1.5vh; /* Ajustable según el diseño */
+    box-shadow: 0 0.3vh 0.5vh rgba(0, 0, 0, 0.3); /* Sombra suave */
+    font-family: Arial, sans-serif; /* Tipo de fuente */
+    font-weight: bold;
+    font-size: 2vh; /* Tamaño de fuente */
+    color: #ffffff; /* Color de texto */
+    text-transform: uppercase; /* Convertir texto a mayúsculas */
+    letter-spacing: 0.1vw; /* Espaciado entre letras */
+    text-shadow: 0 0.1vh 0.2vh rgba(0, 0, 0, 0.3); /* Sombra de texto */
+    transition: all .5s ease; /* Animación suave */
+}
 
   .producto {
     width: 100%;
@@ -109,41 +144,60 @@ body {
   }
 
   .producto img {
-    width: 100%;
-    border-radius: 0.8vw; /* Unidad relativa */
+    width: 100%; /* Opcional: asegura que la imagen ocupe todo el espacio disponible */
+    height: 100%; /* Opcional: asegura que la imagen ocupe todo el espacio disponible */
+    max-width: 100%; /* Garantiza que la imagen no exceda su contenedor */
+    max-height: 100%; /* Garantiza que la imagen no exceda su contenedor */
+    object-fit: cover; /* Escala la imagen manteniendo su relación de aspecto, cubriendo todo el contenedor */
+    border-radius: 2vw; /* Unidad relativa */
   }
 
   .tallas {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap:10%;
+    opacity: .7;
   }
 
   .descripcion {
     text-align: left;
-  }
+    display: grid;
+    grid-template-columns: 3fr 1fr; /* Dos columnas de igual tamaño */
+    grid-template-rows: repeat(2, auto); /* Dos filas con altura automática */
+    gap: 10px; /* Espacio entre las celdas */
+    align-items: stretch;
+    justify-items: center;
+    
+}
 
   .descripcion p {
     margin: 0.5vw 0; /* Unidad relativa */
+    
   }
+
+  .descripcion p:nth-child(1) ,
+  .descripcion p:nth-child(2){
+    margin: 0.5vw 0; /* Espacio entre el primer párrafo y los demás */
+    padding: 1vw; /* Espacio dentro del borde */
+    text-transform: uppercase; /* Convertir texto a mayúsculas */
+    font-size: 5vw; /* Tamaño de fuente grande */
+    font-weight: bold; /* Texto en negrita */
+    font-family:Verdana, Geneva, Tahoma, sans-serif ;
+    color: #333; /* Color de texto gris oscuro */
+}
+
+.descripcion p:nth-child(3) {
+  margin: 0.5vw 0; /* Espacio entre el primer párrafo y los demás */
+  padding: 1vw; /* Espacio dentro del borde */
+  font-size: 4vw; /* Tamaño de fuente grande */
+  color: #333; /* Color de texto gris oscuro */
+}
 
   .descripcion img {
-    width: 2vw; /* Unidad relativa */
-    height: 2vw; /* Unidad relativa */
-    margin-top: 1vw; /* Unidad relativa */
+    width: 89%; /* Unidad relativa */
+    height: 85%; /* Unidad relativa */
+    margin: 1vw; /* Unidad relativa */
   }
-
-  /* Estilo específico para cada producto si es necesario */
-  /*.producto1 {
-    /* Agrega estilos específicos si es necesario */
-  /*}*/
-
-  /*.producto2 {
-    /* Agrega estilos específicos si es necesario */
-  /*}*/
-
-  /*.producto3 {
-     Agrega estilos específicos si es necesario */
-  /*}*/
 
   /*! FOOTER */
   footer {
@@ -153,6 +207,8 @@ body {
     padding: 1vw; /* Unidad relativa */
     text-align: center;
     align-items: center;
+    background-color: #000000;
+    margin-top: 2vh;
   }
 
   .line {
@@ -174,39 +230,20 @@ body {
 
 @media screen and (min-width: 769px) and (max-width: 1024px) and (orientation: portrait) {
   body {
-    background-color: blue;
+    background-image: url(imagenes/fondotablet.jpg);
     
   }
  /*! HEADER */
- header {
-  height: 7vh;
-}
-
-.category img:not(.logo img) {
-  height: 6vh; /* Unidad relativa */
-}
-
-.category .logo {
-  width: 10vw;
-  height: 7vh; /* Unidad relativa */
-  
-}
 
 .buscador {
   width: 20vw;
-  height: 6vh;
+  height: 5vh;
   font-size: 2vw;
-  margin-left: 40vw;
+  margin-left: 15vw;
   background-position: 5% 12%;
+  padding-left: 25%;
+  border-radius: 50px;
     
-}
-/*! NAVBAR */
-.navbar {
-  height: 4vh;
-  margin-top: 8vh;
-  font-size: 3.5vw;
-  gap: 2vw;
-  
 }
 
 /*! MAIN */
@@ -215,25 +252,38 @@ main {
   flex-direction:row;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 1vw; /* Espacio entre elementos */
-  margin-top: 5vh; /* Unidad relativa */
   max-width: 99%;
-  align-content: stretch;
+  align-items: stretch;
 }
 
 .item {
   width: 40vw;
-  margin: 1vw; /* Unidad relativa */
-  padding: 1vw; /* Unidad relativa */
-  background-color: #fff;
-  border-radius: 0.8vw; /* Unidad relativa */
   box-shadow: 0 0 1vw rgba(0, 0, 0, 0.1); /* Unidad relativa */
 }
 
-
 .producto img {
-  width: 100%;
-  height: 70vh;
-  border-radius: 0.8vw; /* Unidad relativa */
+  height: 50vh;
+}
+
+.tallas {
+ font-size: 2.2vw;
+  gap:10%;
+}
+
+.descripcion p:nth-child(1) ,
+.descripcion p:nth-child(2){
+  margin: 0.5vw 0; /* Espacio entre el primer párrafo y los demás */
+  padding: 1vw; /* Espacio dentro del borde */
+  font-size: 2.5vw; /* Tamaño de fuente grande */
+}
+
+.descripcion p:nth-child(3) {
+font-size: 2.5vw; /* Tamaño de fuente grande */
+}
+
+.descripcion img {
+  width: 85%; /* Unidad relativa */
+  height: 65%; /* Unidad relativa */
 }
 
 
@@ -245,32 +295,18 @@ main {
 
 @media screen and (min-width: 1025px) {
   
-
 body {
-  overflow: auto;
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  background-color: rgb(252, 37, 37);
-  box-sizing: border-box;
+  background-image: url(imagenes/fondo.jpg);
 }
 
 
 /*! HEADER */
 
 header {
-
   padding: 1%;
-  top:0%;
-  display: flex;
   gap:1%;
-  align-items: center;
   justify-content: center;
   position: sticky;
-  z-index: 1;
-  height: 10vh;
-  width: 97vw;
-  background-color: #000000;
   overflow: visible;
   padding-top: 3vh;
   
@@ -288,38 +324,22 @@ header {
   }
 }
 
-
 .buscador {
 width: 27vw;
-height: 6vh;
 border-radius: 45px;
-background-color: #656565;
-padding-left: 12%;
+padding-left: 15%;
 font-size: 100%;
-border: 2px solid rgb(85, 84, 84);
-background-image: url(imagenes/lupa.png) ;
-background-repeat: no-repeat;
 background-position: 3%  12% ;
-background-size: contain;
-
 }
-
 .buscador::placeholder {
-  color: #929292;
+  color:rgb(85, 84, 84);
 }
-
 
 .category {
   height: auto;
   width: 100%;
-  display:flex;
   gap:10%;
-  align-items: center;
-  position: relative; /* Añadido position:relative para utilizar left */
-  
 }
-
-
 
 .category p {
   cursor: pointer;
@@ -329,18 +349,15 @@ background-size: contain;
   margin:1%;
   font-weight: bold;
   font-size: 200%;
-  
 
 }
 
 .category img:not(.logo img){
   cursor: pointer;
-  padding-left:8% ;
+
 }
 
-
 .category .logo {
-  width: 100%; /* Ajusta el ancho del contenedor del logo al 50% del contenedor principal */
   padding-top: 50%;
  
  animation: encoger auto linear both; /* Arregla la propiedad animation */
@@ -348,20 +365,6 @@ background-size: contain;
  animation-range: 0 320px;
  
 }
-
-
-
-
-
-.category .logo img {
-  width: 100%;
-  height: auto;
-
-
-
-
-}
-
 
 @keyframes encoger{
   from {
@@ -380,13 +383,10 @@ background-size: contain;
 
 }
 
-
-
 .category p:hover {
   outline:1px solid wheat;
   background-color: #d321f7;
   box-shadow: 0 0 15px purple ;
-  
 }
 
 .category img:hover:not(.logo img) {
@@ -397,46 +397,20 @@ background-size: contain;
 
 .navbar {
   width: 79%;
-  height: 7%;
-  top: 15vh;
   left:20vw;
-  background-color: #00FFA6;
-  display: flex;
-  align-items: center;
   justify-content: space-around;
-  color: white;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-weight: bold;
-  font-style: italic;
-  font-size: 30px;
+  font-size: 2vw;
   padding: 10px;
   margin-left: 18%;
 
 }
 
-
-.navbar a {
-  text-decoration: none;
-  color: white;
-  display: block;
-}
-
-.navbar a:hover {
-  background-color: #007D5E;
-}
-
-
 /*! MAIN */
 
 main {
-  position: relative;
-  display: flex;
   padding: 20px;
   padding-top: 20vh; /* Asegúrate de que este valor sea apropiado para tus necesidades */
   justify-content: space-around;
-  grid-template-columns: repeat(4, 1fr); /* Cambiar a 4 columnas */
-  grid-gap: 1vw; /* Espacio entre elementos */
-  margin-top: 5vh; /* Unidad relativa */
   max-width: 99%;
   align-content: stretch;
   flex-wrap: wrap;
@@ -446,31 +420,27 @@ main {
 
 
 .item {    /*producto + descripcion*/
-position: relative;
-text-align: center;
 width: 25vw;
- 
-  
+
+}
+.sale {
+  top: 18vh;
+  left: 2vw;
+  width: 20vw; /* Ancho ajustable según tu diseño */
+  height: 10vh; /* Altura ajustable según tu diseño */
+  font-size: 4vh; /* Tamaño de fuente */
 }
 
+
 .producto {
-  width: auto;
-  height: auto;
+  height: 80%;
   position: relative;
-  overflow:hidden; /* Asegura que la imagen no se salga del contenedor */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  border-radius: 20px;
-
+  border-radius: 2vw;
 }
 
-.producto img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 20px;
-}
 
 .producto.producto1 {
   background-image: url('imagenes/sudaderadetras.jpg');
@@ -483,6 +453,17 @@ width: 25vw;
 .producto.producto3 {
   background-image: url('imagenes/verdedetras.jpg');
 }
+.producto.producto4 {
+  background-image: url('imagenes/pantaloncuadrosdetras.jpg');
+}
+
+.producto.producto5 {
+  background-image: url('imagenes/pantalonrotodetras.jpg');
+}
+
+.producto.producto6 {
+  background-image: url('imagenes/gorrodetras.jpg');
+}
 
 .producto img:hover{
   opacity: 0;
@@ -491,16 +472,11 @@ width: 25vw;
 
 .tallas {
   bottom:0px;
-  height: 6%;
   width: 100%;
-  background-color: darkred;
-  z-index: auto; /* Cambia el valor de z-index a auto o a un número menor según sea necesario */
+  background-color: rgb(189, 178, 178);
   position: absolute;
   opacity: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap:3%;
+
   font-weight: bold;
 }
 
@@ -508,91 +484,33 @@ width: 25vw;
   opacity: 0.8;
   cursor: pointer;
 }
-.descripcion {
-  text-align: center;
-  border-radius: 20px;
-  width: 21vw;
-  height: 16vh;
-  margin-top: 4vh;
-  background-color: #4d4848;
-  display: grid;
-  grid-template-columns: auto auto; /* Ajusta las proporciones según tus preferencias */
-  grid-gap: auto; /* Ajusta el espacio entre las celdas según tus preferencias */
-  justify-content: center;
-  align-content: center;
-  margin: auto; /* Añadido para centrar el contenedor */
-  overflow: auto;
-  max-width: 100%;
-  text-align: center;
-  
-}
 
-.descripcion p {
-  font-weight: bold;
-  font-size: 180%;
-  margin: 1px 10px;
-  padding: 5px;
-  text-align: center; /* Añadido para centrar el texto */
-}
-
-.descripcion p:nth-child(1) {
-  /* Estilos para el primer párrafo */
-  text-transform: uppercase;
-  color: #36ffbc;
-  font-family:'Courier New', Courier, monospace;
-  font-weight: bold;
-  font-size: 200%;
-
-}
-
-.descripcion p:nth-child(2) {
-  /* Estilos para el segundo párrafo */
-  font-weight: bold;
-  font-size: 240%;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #000000;
-  
+.descripcion p:nth-child(1) ,
+.descripcion p:nth-child(2){
+  margin: 0.5vw 0; /* Espacio entre el primer párrafo y los demás */
+  padding: 0vw; /* Espacio dentro del borde */
+  font-size: 1.5vw; /* Tamaño de fuente grande */
+  font-family:Verdana, Geneva, Tahoma, sans-serif ;
+  color: #333; /* Color de texto gris oscuro */
 }
 .descripcion p:nth-child(3) {
   font-weight: bold;
-  font-size: 80%;
+  font-size: 100%;
   color: #727373;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  
 }
 
 .descripcion img {
-  
-  padding: 10%; /* Ajusta el espaciado según tus preferencias */
+  width: 70%; /* Unidad relativa */
+  height: 65%; /* Unidad relativa */
 }
 
 
 /*! FOOTER */
 
-
-footer {
-  
-  position:static;
-  bottom: 0px;
-  width: 98%;
-  padding: 10px; /* Reducir la altura del padding */
-  text-align: center;
-  align-items: center;
-
-}
-
-.line {
-  border: solid #ff00ff;
-  width: 99%;
-  margin-top: 20px; /* Añadir margen superior para separar del contenido */
-  margin-bottom: 2%
-}
-
-/* Ajustar la posición y tamaño de las imágenes del footer */
 footer img {
-  
   width: 5%; /* Reducir el tamaño de las imágenes según tus necesidades */
   margin: 0 7%; /* Reducir el espacio entre las imágenes */
-  max-width: 100%;
 }
 
 
