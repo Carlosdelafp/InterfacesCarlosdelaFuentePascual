@@ -43,7 +43,10 @@ body {
   .category img:not(.logo img) {
     width: auto;
     height: 4.5vh; /* Unidad relativa */
+    padding:  0px 10px ;
+
   }
+  
 
   .buscador {
     width: 11vw;
@@ -243,7 +246,16 @@ body {
   background-position: 5% 12%;
   padding-left: 25%;
   border-radius: 50px;
-    
+}
+
+.buscador::placeholder {
+  color: gray
+}
+
+.buscador:focus {
+  background-image: url(imagenes/lupa.png);
+  width: 20vw;
+  height: 4vh;
 }
 
 /*! MAIN */
@@ -258,11 +270,10 @@ main {
 
 .item {
   width: 40vw;
-  box-shadow: 0 0 1vw rgba(0, 0, 0, 0.1); /* Unidad relativa */
 }
 
 .producto img {
-  height: 50vh;
+  height: 45vh;
 }
 
 .tallas {
@@ -335,12 +346,26 @@ background-position: 3%  12% ;
   color:rgb(85, 84, 84);
 }
 
+.buscador:focus {
+  background-image: url(imagenes/lupa.png);
+  width: 27vw;
+  height: 6vh;
+}
+
 .category {
   height: auto;
   width: 100%;
   gap:10%;
 }
-
+.category:nth-child(2) {
+  order: 1; /* Cambiar el orden de la segunda categoría */
+}
+.category:nth-child(3) {
+  order: 0; /* Cambiar el orden de la segunda categoría */
+}
+.category:nth-child(4) {
+  order: 2; /* Cambiar el orden de la segunda categoría */
+}
 .category p {
   cursor: pointer;
   width: 11vw; /* Cambiado a 'auto' para que se ajuste al contenido */
@@ -354,7 +379,6 @@ background-position: 3%  12% ;
 
 .category img:not(.logo img){
   cursor: pointer;
-
 }
 
 .category .logo {
@@ -483,6 +507,7 @@ width: 25vw;
 .item:hover .tallas {
   opacity: 0.8;
   cursor: pointer;
+  border-radius: 0 0 2vw 2vw;
 }
 
 .descripcion p:nth-child(1) ,
@@ -512,9 +537,5 @@ footer img {
   width: 5%; /* Reducir el tamaño de las imágenes según tus necesidades */
   margin: 0 7%; /* Reducir el espacio entre las imágenes */
 }
-
-
-
-
 }
 /************ FIN ORDENADOR ****************/
