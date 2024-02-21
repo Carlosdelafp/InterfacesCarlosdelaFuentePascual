@@ -1,1 +1,23 @@
-
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+#game-container {
+    width: 400px; /* Ancho del laberinto */
+    height: 400px; /* Altura del laberinto */
+    margin: 50px auto;
+    border: 2px solid #000;
+    position: relative;
+    background-color: #f0f0f0; /* Color de fondo del laberinto */
+}
+.cell {
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border: 1px solid #000;
+    position: absolute;
+}
+.wall {
+    background-color: #000;
+}
