@@ -8,18 +8,20 @@
 </head>
 <body>
     <h1>Laberinto</h1>
-    <div id="main-menu">
-        <button id="btnControls">Controles</button>
-        <button id="btnStart">Jugar</button>
+    <div id="game-container">
+        <!-- Aquí se mostrará el laberinto -->
     </div>
-    <div id="instructions" style="display: none;">
-        <!-- Aquí van las instrucciones -->
-        <p>Controles:</p>
-        <p>Utiliza las teclas de flecha para mover al jugador.</p>
+
+    <div id="instructions">
+        <h2>Controles</h2>
+        <p>Aquí van las instrucciones de cómo jugar...</p>
         <button id="btnBack">Volver</button>
     </div>
-    <div id="game-container" style="display: none;">
-        <!-- Aquí se mostrará el laberinto -->
+
+    <div id="main-menu">
+        <h2>Bienvenido al Laberinto</h2>
+        <button id="btnControls" onclick="showInstructions()">Controles</button>
+        <button id="btnStart" onclick="startGame()">Jugar</button>
     </div>
     <script src="PracticaU5.js"></script>
 </body>
