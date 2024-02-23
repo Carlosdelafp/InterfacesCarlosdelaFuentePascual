@@ -91,16 +91,24 @@ function startGame() {
     instructions.style.display = 'none'; 
     createMaze(); 
     document.addEventListener('keydown', movePlayer); 
+    startCountdown(); // Iniciar cuenta regresiva al comenzar el juego
 }
 
-let timerInterval;
-let secondsLeft = 60;
+let countdownTimer;
 
-function startTimer() {
-    timerInterval = setInterval(() => {
+function startCountdown() {
+    let secondsLeft = 10;
+    const countdownElement = document.createElement('div');
+    countdownElement.id = 'countdown';
+    countdownElement.innerText = 'Tiempo restante: ' + secondsLeft + 's';
+    document.body.appendChild(countdownElement);
+
+    countdownTimer = setInterval(() => {
         secondsLeft--;
+        countdownElement.innerText = 'Tiempo restante: ' + secondsLeft + 's';
+
         if (secondsLeft <= 0) {
-            clearInterval(timerInterval);
+            clearInterval(countdownTimer);
             alert('¡Se acabó el tiempo! ¡Inténtalo de nuevo!');
         }
     }, 1000);
