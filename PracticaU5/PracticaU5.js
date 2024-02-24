@@ -1,4 +1,3 @@
-
 const gameContainer = document.getElementById('game-container');
 const instructions = document.getElementById('instructions');
 const mainMenu = document.getElementById('main-menu');
@@ -81,9 +80,11 @@ function movePlayer(event) {
             break;
     }
 
+    // Verificar si el jugador ha llegado a la casilla final
     if (playerTop >= (mazeSize - 1) * cellSize && playerLeft >= (mazeSize - 1) * cellSize) {
-        clearInterval(timerInterval); 
-        alert('¡Felicidades! ¡Has escapado del laberinto!');
+        clearTimeout(timerId); // Cancelar el temporizador
+        showWinScreen(); // Mostrar mensaje de victoria
+        document.removeEventListener('keydown', movePlayer); // Detener detección de teclas
     }
 }
 
@@ -93,26 +94,56 @@ function startGame() {
     createMaze(); 
     document.addEventListener('keydown', movePlayer); 
     startCountdown(); // Iniciar cuenta regresiva al comenzar el juego
+
+    // Marcar la casilla final de color rojo
+    const finalCell = document.querySelector('.cell:nth-child(' + mazeSize + 'n):nth-last-child(1)');
+    finalCell.classList.add('goal');
 }
 
-let countdownTimer;
+let timerId;
 
 function startCountdown() {
     let secondsLeft = 10;
-    const countdownElement = document.createElement('div');
-    countdownElement.id = 'countdown';
-    countdownElement.innerText = 'Tiempo restante: ' + secondsLeft + 's';
-    document.body.appendChild(countdownElement);
+    const countdownElement = document.getElementById('countdown');
+    if (countdownElement) {
+        countdownElement.remove(); // Eliminar contador de tiempo existente
+    }
+    const newCountdownElement = document.createElement('div');
+    newCountdownElement.id = 'countdown';
+    newCountdownElement.innerText = 'Tiempo restante: ' + secondsLeft + 's';
+    document.body.appendChild(newCountdownElement);
 
-    countdownTimer = setInterval(() => {
+    const updateCountdown = () => {
         secondsLeft--;
-        countdownElement.innerText = 'Tiempo restante: ' + secondsLeft + 's';
+        newCountdownElement.innerText = 'Tiempo restante: ' + secondsLeft + 's';
 
-        if (secondsLeft <= 0) {
-            clearInterval(countdownTimer);
+        // Cuando queden 3 segundos, cambiar el color a rojo
+        if (secondsLeft === 3) {
+            newCountdownElement.style.color = 'red';
+        }
+
+        if (secondsLeft > 0) {
+            timerId = setTimeout(updateCountdown, 1000);
+        } else {
             showGameOverScreen();
         }
-    }, 1000);
+    };
+
+    updateCountdown();
+}
+
+function showWinScreen() {
+    const winScreen = document.createElement('div');
+    winScreen.id = 'win-screen';
+    winScreen.innerHTML = `
+        <h2>¡Felicidades, has ganado!</h2>
+        <p>¡Has completado el laberinto con éxito!</p>
+        <button id="btnRestart">Jugar de nuevo</button>
+    `;
+    document.body.appendChild(winScreen);
+
+    const btnRestart = document.getElementById('btnRestart');
+    btnRestart.addEventListener('click', restartGame);
 }
 
 function showGameOverScreen() {
@@ -120,17 +151,27 @@ function showGameOverScreen() {
     gameOverScreen.id = 'game-over-screen';
     gameOverScreen.innerHTML = `
         <h2>¡Has perdido!</h2>
+        <p>Lo siento, no lograste llegar al final a tiempo. Inténtalo de nuevo.</p>
         <button id="btnRestart">Volver a jugar</button>
     `;
     document.body.appendChild(gameOverScreen);
 
     const btnRestart = document.getElementById('btnRestart');
     btnRestart.addEventListener('click', restartGame);
+
+    // Detener la detección de teclas cuando se muestra el mensaje de Game Over
+    document.removeEventListener('keydown', movePlayer);
 }
 
 function restartGame() {
     const gameOverScreen = document.getElementById('game-over-screen');
-    gameOverScreen.remove(); // Eliminar pantalla de "Has perdido"
+    if (gameOverScreen) {
+        gameOverScreen.remove(); // Eliminar pantalla de "Has perdido"
+    }
+    const winScreen = document.getElementById('win-screen');
+    if (winScreen) {
+        winScreen.remove(); // Eliminar pantalla de victoria
+    }
     startGame(); // Reiniciar el juego
 }
 

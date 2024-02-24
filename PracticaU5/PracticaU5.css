@@ -2,11 +2,12 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    position: relative;
+    height: 100vh;
+    background-color: #f0f0f0;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0;
 }
 
 #game-container {
@@ -15,6 +16,7 @@ body {
     position: relative;
     background-color: #f0f0f0;
     overflow: hidden;
+    margin-top: 40px;
 }
 
 .cell {
@@ -23,6 +25,7 @@ body {
     background-color: #fff;
     border: 1px solid #000;
     position: absolute;
+    z-index: 0;
 }
 
 .wall {
@@ -40,7 +43,10 @@ body {
 }
 
 .goal {
-    background-color: blue;
+    background-color: red;
+    width: 40px;
+    height: 40px;
+    z-index: 2;
 }
 
 #instructions {
@@ -53,4 +59,28 @@ body {
     background-color: #fff;
     padding: 20px;
     border: 2px solid #000;
+}
+
+#countdown {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    background-color: #fff;
+    padding: 10px 20px;
+    border: 2px solid #000;
+    z-index: 1;
+}
+
+#main-menu, #game-over-screen, #win-screen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border: 2px solid #000;
+    z-index: 3; /* Asegura que el mensaje esté por encima de la pelota */
 }
