@@ -1,3 +1,4 @@
+
 const gameContainer = document.getElementById('game-container');
 const instructions = document.getElementById('instructions');
 const mainMenu = document.getElementById('main-menu');
@@ -109,9 +110,28 @@ function startCountdown() {
 
         if (secondsLeft <= 0) {
             clearInterval(countdownTimer);
-            alert('¡Se acabó el tiempo! ¡Inténtalo de nuevo!');
+            showGameOverScreen();
         }
     }, 1000);
+}
+
+function showGameOverScreen() {
+    const gameOverScreen = document.createElement('div');
+    gameOverScreen.id = 'game-over-screen';
+    gameOverScreen.innerHTML = `
+        <h2>¡Has perdido!</h2>
+        <button id="btnRestart">Volver a jugar</button>
+    `;
+    document.body.appendChild(gameOverScreen);
+
+    const btnRestart = document.getElementById('btnRestart');
+    btnRestart.addEventListener('click', restartGame);
+}
+
+function restartGame() {
+    const gameOverScreen = document.getElementById('game-over-screen');
+    gameOverScreen.remove(); // Eliminar pantalla de "Has perdido"
+    startGame(); // Reiniciar el juego
 }
 
 document.getElementById('btnBack').addEventListener('click', function() {
