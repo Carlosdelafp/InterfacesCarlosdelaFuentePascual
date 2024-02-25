@@ -124,6 +124,29 @@ body {
 
 }
 
+#controles button, #instrucciones button {
+    display: block;
+    width: 7vw; 
+    height: 5vh;
+    margin: 10px auto; 
+    font-size: 18px;
+    border: 1px solid white;
+    border-radius: 10px; 
+    background-color: #ffffff;
+    color:#0c74c9;
+    cursor: pointer;
+    transition:  0.3s; 
+}
+
+
+#controles button:hover, #instrucciones button:hover {
+    background-color: #37128d; 
+    scale: 1.03;
+    box-shadow: 0 0 15px rgb(255, 255, 255);
+    color:#ffffff;
+
+}
+
 #contador {
     position: absolute;
     top: 10%;
@@ -147,11 +170,11 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    background-color: #860b72;
+    background-color: #9D15D3;
     padding: 20px;
     outline:1px solid rgb(255, 255, 255);
     z-index: 3;
-    box-shadow: 0 0 45px rgb(172, 11, 132);
+    box-shadow: 0 0 55px #a413dd;
     color:#fff;
 
 }
@@ -172,7 +195,7 @@ body {
 
 
 #pantalla-perder button:hover, #pantalla-ganar button:hover {
-    background-color: #3f0936; 
+    background-color: #721297; 
     scale: 1.03;
     box-shadow: 0 0 15px rgb(255, 255, 255);
     color:#ffffff;
