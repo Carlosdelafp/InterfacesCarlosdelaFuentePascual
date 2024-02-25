@@ -1,9 +1,9 @@
-const gameContainer = document.getElementById('game-container');
-const instructions = document.getElementById('instructions');
-const mainMenu = document.getElementById('main-menu');
-const mazeSize = 10; 
-const cellSize = 40; 
-const maze = [
+const contenedorJuego = document.getElementById('contenedor-juego');
+const instrucciones = document.getElementById('instrucciones');
+const menuPrincipal = document.getElementById('menu-principal');
+const tamanoLaberinto = 10; 
+const tamanoCelda = 40; 
+const laberinto = [
     [0, 1, 0, 1, 0, 1, 0, 1, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [1, 0, 1, 0, 1, 0, 1, 0, 1, 0],
@@ -15,33 +15,33 @@ const maze = [
     [1, 0, 1, 1, 1, 0, 1, 1, 1, 1],
     [0, 0, 0, 0, 1, 0, 0, 0, 0, 0]
 ];
-const player = document.createElement('div');
-player.classList.add('player');
+const jugador = document.createElement('div');
+jugador.classList.add('jugador');
 
-function createMazeAsync() {
+function crearLaberintoAsync() {
     return new Promise((resolve, reject) => {
         try {
-            gameContainer.innerHTML = '';
-            gameContainer.style.display = 'block';
-            gameContainer.style.width = mazeSize * cellSize + 'px';
-            gameContainer.style.height = mazeSize * cellSize + 'px';
+            contenedorJuego.innerHTML = '';
+            contenedorJuego.style.display = 'block';
+            contenedorJuego.style.width = tamanoLaberinto * tamanoCelda + 'px';
+            contenedorJuego.style.height = tamanoLaberinto * tamanoCelda + 'px';
 
-            for (let i = 0; i < mazeSize; i++) {
-                for (let j = 0; j < mazeSize; j++) {
-                    const cell = document.createElement('div');
-                    cell.classList.add('cell');
-                    if (maze[i][j] === 1) {
-                        cell.classList.add('wall');
+            for (let i = 0; i < tamanoLaberinto; i++) {
+                for (let j = 0; j < tamanoLaberinto; j++) {
+                    const celda = document.createElement('div');
+                    celda.classList.add('celda');
+                    if (laberinto[i][j] === 1) {
+                        celda.classList.add('pared');
                     }
-                    cell.style.top = (i * cellSize) + 'px';
-                    cell.style.left = (j * cellSize) + 'px';
-                    gameContainer.appendChild(cell);
+                    celda.style.top = (i * tamanoCelda) + 'px';
+                    celda.style.left = (j * tamanoCelda) + 'px';
+                    contenedorJuego.appendChild(celda);
                 }
             }
 
-            gameContainer.appendChild(player);
-            player.style.top = '0px';
-            player.style.left = '0px';
+            contenedorJuego.appendChild(jugador);
+            jugador.style.top = '0px';
+            jugador.style.left = '0px';
 
             resolve();
         } catch (error) {
@@ -50,161 +50,171 @@ function createMazeAsync() {
     });
 }
 
-function showInstructions() {
-    mainMenu.style.display = 'none';
-    instructions.style.display = 'block';
+function mostrarInstrucciones() {
+    menuPrincipal.style.display = 'none';
+    instrucciones.style.display = 'block';
 }
 
-function hideInstructions() {
-    mainMenu.style.display = 'block';
-    instructions.style.display = 'none';
+function ocultarInstrucciones() {
+    menuPrincipal.style.display = 'block';
+    instrucciones.style.display = 'none';
 }
 
-let animationId;
+function mostrarControles() {
+    menuPrincipal.style.display = 'none';
+    instrucciones.style.display = 'block';
+}
 
-function movePlayerAnimated(key, targetTop, targetLeft) {
-    const playerTop = parseInt(player.style.top);
-    const playerLeft = parseInt(player.style.left);
+function ocultarControles() {
+    menuPrincipal.style.display = 'block';
+    instrucciones.style.display = 'none';
+}
 
-    const distanceTop = targetTop - playerTop;
-    const distanceLeft = targetLeft - playerLeft;
+let idAnimacion;
 
-    const step = 5;
+function moverJugadorAnimado(tecla, objetivoArriba, objetivoIzquierda) {
+    const jugadorArriba = parseInt(jugador.style.top);
+    const jugadorIzquierda = parseInt(jugador.style.left);
 
-    if (Math.abs(distanceTop) > step || Math.abs(distanceLeft) > step) {
-        player.style.top = (playerTop + Math.sign(distanceTop) * step) + 'px';
-        player.style.left = (playerLeft + Math.sign(distanceLeft) * step) + 'px';
-        animationId = requestAnimationFrame(() => movePlayerAnimated(key, targetTop, targetLeft));
+    const distanciaArriba = objetivoArriba - jugadorArriba;
+    const distanciaIzquierda = objetivoIzquierda - jugadorIzquierda;
+
+    const paso = 5;
+
+    if (Math.abs(distanciaArriba) > paso || Math.abs(distanciaIzquierda) > paso) {
+        jugador.style.top = (jugadorArriba + Math.sign(distanciaArriba) * paso) + 'px';
+        jugador.style.left = (jugadorIzquierda + Math.sign(distanciaIzquierda) * paso) + 'px';
+        idAnimacion = requestAnimationFrame(() => moverJugadorAnimado(tecla, objetivoArriba, objetivoIzquierda));
     } else {
-        player.style.top = targetTop + 'px';
-        player.style.left = targetLeft + 'px';
-        cancelAnimationFrame(animationId);
+        jugador.style.top = objetivoArriba + 'px';
+        jugador.style.left = objetivoIzquierda + 'px';
+        cancelAnimationFrame(idAnimacion);
 
-        if (targetTop >= (mazeSize - 1) * cellSize && targetLeft >= (mazeSize - 1) * cellSize) {
-            clearTimeout(timerId);
-            showWinScreen();
-            document.removeEventListener('keydown', movePlayer);
+        if (objetivoArriba >= (tamanoLaberinto - 1) * tamanoCelda && objetivoIzquierda >= (tamanoLaberinto - 1) * tamanoCelda) {
+            clearTimeout(idTemporizador);
+            mostrarPantallaGanar();
+            document.removeEventListener('keydown', moverJugador);
         }
     }
 }
 
-function movePlayer(event) {
-    const key = event.key;
-    const playerTop = parseInt(player.style.top);
-    const playerLeft = parseInt(player.style.left);
+function moverJugador(evento) {
+    const tecla = evento.key;
+    const jugadorArriba = parseInt(jugador.style.top);
+    const jugadorIzquierda = parseInt(jugador.style.left);
 
-    switch (key) {
+    switch (tecla) {
         case 'ArrowUp':
-            if (playerTop > 0 && maze[Math.floor(playerTop / cellSize) - 1][Math.floor(playerLeft / cellSize)] === 0) {
-                movePlayerAnimated(key, playerTop - cellSize, playerLeft);
+            if (jugadorArriba > 0 && laberinto[Math.floor(jugadorArriba / tamanoCelda) - 1][Math.floor(jugadorIzquierda / tamanoCelda)] === 0) {
+                moverJugadorAnimado(tecla, jugadorArriba - tamanoCelda, jugadorIzquierda);
             }
             break;
         case 'ArrowDown':
-            if (playerTop < (mazeSize - 1) * cellSize && maze[Math.floor(playerTop / cellSize) + 1][Math.floor(playerLeft / cellSize)] === 0) {
-                movePlayerAnimated(key, playerTop + cellSize, playerLeft);
+            if (jugadorArriba < (tamanoLaberinto - 1) * tamanoCelda && laberinto[Math.floor(jugadorArriba / tamanoCelda) + 1][Math.floor(jugadorIzquierda / tamanoCelda)] === 0) {
+                moverJugadorAnimado(tecla, jugadorArriba + tamanoCelda, jugadorIzquierda);
             }
             break;
         case 'ArrowLeft':
-            if (playerLeft > 0 && maze[Math.floor(playerTop / cellSize)][Math.floor(playerLeft / cellSize) - 1] === 0) {
-                movePlayerAnimated(key, playerTop, playerLeft - cellSize);
+            if (jugadorIzquierda > 0 && laberinto[Math.floor(jugadorArriba / tamanoCelda)][Math.floor(jugadorIzquierda / tamanoCelda) - 1] === 0) {
+                moverJugadorAnimado(tecla, jugadorArriba, jugadorIzquierda - tamanoCelda);
             }
             break;
         case 'ArrowRight':
-            if (playerLeft < (mazeSize - 1) * cellSize && maze[Math.floor(playerTop / cellSize)][Math.floor(playerLeft / cellSize) + 1] === 0) {
-                movePlayerAnimated(key, playerTop, playerLeft + cellSize);
+            if (jugadorIzquierda < (tamanoLaberinto - 1) * tamanoCelda && laberinto[Math.floor(jugadorArriba / tamanoCelda)][Math.floor(jugadorIzquierda / tamanoCelda) + 1] === 0) {
+                moverJugadorAnimado(tecla, jugadorArriba, jugadorIzquierda + tamanoCelda);
             }
             break;
     }
 }
 
-function startGame() {
-    mainMenu.style.display = 'none';
-    instructions.style.display = 'none';
+function iniciarJuego() {
+    menuPrincipal.style.display = 'none';
+    instrucciones.style.display = 'none';
 
-    createMazeAsync().then(() => {
-        document.addEventListener('keydown', movePlayer);
-        startCountdown();
+    crearLaberintoAsync().then(() => {
+        document.addEventListener('keydown', moverJugador);
+        iniciarTemporizador();
 
-        const finalCell = document.querySelector('.cell:nth-child(' + mazeSize + 'n):nth-last-child(1)');
-        finalCell.classList.add('goal');
+        const celdaFinal = document.querySelector('.celda:nth-child(' + tamanoLaberinto + 'n):nth-last-child(1)');
+        celdaFinal.classList.add('meta');
     }).catch(error => {
-        console.error('Error creating maze:', error);
+        console.error('Error creando laberinto:', error);
     });
 }
 
-let timerId;
+let idTemporizador;
 
-function startCountdown() {
-    let secondsLeft = 10;
-    const countdownElement = document.getElementById('countdown');
-    if (countdownElement) {
-        countdownElement.remove();
+function iniciarTemporizador() {
+    let segundosRestantes = 10;
+    const contadorElemento = document.getElementById('contador');
+    if (contadorElemento) {
+        contadorElemento.remove();
     }
-    const newCountdownElement = document.createElement('div');
-    newCountdownElement.id = 'countdown';
-    newCountdownElement.innerText = 'Tiempo restante: ' + secondsLeft + 's';
-    document.body.appendChild(newCountdownElement);
+    const nuevoContadorElemento = document.createElement('div');
+    nuevoContadorElemento.id = 'contador';
+    nuevoContadorElemento.innerText = 'Tiempo restante: ' + segundosRestantes + 's';
+    document.body.appendChild(nuevoContadorElemento);
 
-    const updateCountdown = () => {
-        secondsLeft--;
-        newCountdownElement.innerText = 'Tiempo restante: ' + secondsLeft + 's';
+    const actualizarContador = () => {
+        segundosRestantes--;
+        nuevoContadorElemento.innerText = 'Tiempo restante: ' + segundosRestantes + 's';
 
-        if (secondsLeft === 3) {
-            newCountdownElement.style.color = 'red';
+        if (segundosRestantes === 3) {
+            nuevoContadorElemento.style.color = 'red';
         }
 
-        if (secondsLeft > 0) {
-            timerId = setTimeout(updateCountdown, 1000);
+        if (segundosRestantes > 0) {
+            idTemporizador = setTimeout(actualizarContador, 1000);
         } else {
-            showGameOverScreen();
+            mostrarPantallaPerder();
         }
     };
 
-    updateCountdown();
+    actualizarContador();
 }
 
-function showWinScreen() {
-    const winScreen = document.createElement('div');
-    winScreen.id = 'win-screen';
-    winScreen.innerHTML = `
+function mostrarPantallaGanar() {
+    const pantallaGanar = document.createElement('div');
+    pantallaGanar.id = 'pantalla-ganar';
+    pantallaGanar.innerHTML = `
         <h2>¡Felicidades, has ganado!</h2>
         <p>¡Has completado el laberinto con éxito!</p>
-        <button id="btnRestart">Jugar de nuevo</button>
+        <button id="botonReiniciar">Jugar de nuevo</button>
     `;
-    document.body.appendChild(winScreen);
+    document.body.appendChild(pantallaGanar);
 
-    const btnRestart = document.getElementById('btnRestart');
-    btnRestart.addEventListener('click', restartGame);
+    const botonReiniciar = document.getElementById('botonReiniciar');
+    botonReiniciar.addEventListener('click', reiniciarJuego);
 }
 
-function showGameOverScreen() {
-    const gameOverScreen = document.createElement('div');
-    gameOverScreen.id = 'game-over-screen';
-    gameOverScreen.innerHTML = `
+function mostrarPantallaPerder() {
+    const pantallaPerder = document.createElement('div');
+    pantallaPerder.id = 'pantalla-perder';
+    pantallaPerder.innerHTML = `
         <h2>¡Has perdido!</h2>
         <p>Lo siento, no lograste llegar al final a tiempo. Inténtalo de nuevo.</p>
-        <button id="btnRestart">Volver a jugar</button>
+        <button id="botonReiniciar">Volver a jugar</button>
     `;
-    document.body.appendChild(gameOverScreen);
+    document.body.appendChild(pantallaPerder);
 
-    const btnRestart = document.getElementById('btnRestart');
-    btnRestart.addEventListener('click', restartGame);
+    const botonReiniciar = document.getElementById('botonReiniciar');
+    botonReiniciar.addEventListener('click', reiniciarJuego);
 
-    document.removeEventListener('keydown', movePlayer);
+    document.removeEventListener('keydown', moverJugador);
 }
 
-function restartGame() {
-    const gameOverScreen = document.getElementById('game-over-screen');
-    if (gameOverScreen) {
-        gameOverScreen.remove();
+function reiniciarJuego() {
+    const pantallaPerder = document.getElementById('pantalla-perder');
+    if (pantallaPerder) {
+        pantallaPerder.remove();
     }
-    const winScreen = document.getElementById('win-screen');
-    if (winScreen) {
-        winScreen.remove();
+    const pantallaGanar = document.getElementById('pantalla-ganar');
+    if (pantallaGanar) {
+        pantallaGanar.remove();
     }
-    startGame();
+    iniciarJuego();
 }
 
-document.getElementById('btnBack').addEventListener('click', function() {
-    hideInstructions();
+document.getElementById('botonVolver').addEventListener('click', function() {
+    ocultarInstrucciones();
 });
