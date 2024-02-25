@@ -1,5 +1,6 @@
 const contenedorJuego = document.getElementById('contenedor-juego');
 const instrucciones = document.getElementById('instrucciones');
+const controles = document.getElementById('controles');
 const menuPrincipal = document.getElementById('menu-principal');
 const tamanoLaberinto = 10; 
 const tamanoCelda = 40; 
@@ -62,12 +63,12 @@ function ocultarInstrucciones() {
 
 function mostrarControles() {
     menuPrincipal.style.display = 'none';
-    instrucciones.style.display = 'block';
+    controles.style.display = 'block'; // Mostrar la sección de controles
 }
 
 function ocultarControles() {
     menuPrincipal.style.display = 'block';
-    instrucciones.style.display = 'none';
+    controles.style.display = 'none'; // Ocultar la sección de controles
 }
 
 let idAnimacion;
@@ -170,7 +171,7 @@ function iniciarTemporizador() {
         }
     };
 
-    actualizarContador();
+   actualizarContador();
 }
 
 function mostrarPantallaGanar() {
@@ -215,6 +216,10 @@ function reiniciarJuego() {
     iniciarJuego();
 }
 
-document.getElementById('botonVolver').addEventListener('click', function() {
+document.getElementById('botonVolverInstrucciones').addEventListener('click', function() {
     ocultarInstrucciones();
+});
+
+document.getElementById('botonVolverControles').addEventListener('click', function() {
+    ocultarControles();
 });
