@@ -82,5 +82,5 @@ body {
     background-color: #fff;
     padding: 20px;
     border: 2px solid #000;
-    z-index: 3; /* Asegura que el mensaje esté por encima de la pelota */
+    z-index: 3;
 }
